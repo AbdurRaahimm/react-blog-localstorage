@@ -1,10 +1,11 @@
-# React Vite Tailwind Project
-This is a template for a React project with Vite and Tailwind CSS.
+# React Vite Tailwind Project authentication and blog website with localStorage 
+## Description 
+This is a simple project with react vite tailwind css and localstorage. This project is a simple authentication and blog website. In this project you can create a blog and save it in localstorage. You can also delete the blog. You can also login and logout. This project is a simple project. I hope you like this project.
 
 ## Usage
 1. Clone this repository
 ```bash
-git clone https://github.com/AbdurRaahimm/react-vite-tailwind-starter.git
+git clone 
 ```
 2. Run The Essential Dependency
 ```bash
@@ -24,11 +25,19 @@ npm run serve
 ```
 
 ## Features
+- Authentication
+- Blog
+- LocalStorage
+- Login
+- Logout
+- Delete Blog
+- Add/Edit Blog 
+
+## Tools
 - React
 - Vite
 - Tailwind CSS
 - ESLint
-- Prettier
 
 
 ## Connect on Social Media
