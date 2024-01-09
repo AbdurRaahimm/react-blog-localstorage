@@ -96,9 +96,7 @@ export default function Navber() {
                     menus.map((menu)=>(
                         <li key={menu.id} className="py-2">
                             <NavLink
-                                exact
                                 to={menu.link}
-                                activeClassName="text-green-500"
                                 className="block text-sm px-2 py-4 hover:bg-green-500 hover:text-white transition duration-300"
                             >
                                 {menu.name}
@@ -115,10 +113,10 @@ export default function Navber() {
                             <button onClick={logoutHandler} className="bg-green-500 text-white px-2 py-1 rounded">Logout</button>
                         </div>
                         :
-                        <>
+                        <div className='pb-4 space-x-2'>
                         <Link to="/login" rel="noreferrer" className="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Log In</Link>
                         <Link to="/signup" rel="noreferrer" className="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300">Sign Up</Link>
-                        </>
+                        </div>
                     }
                 {/* <li className=""><a href="#" className="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Home</a></li>
                 <li><a href="#" className="block text-sm px-2 py-4 hover:bg-green-500 hover:text-white transition duration-300">About</a></li>
