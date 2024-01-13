@@ -54,13 +54,13 @@ export default function Navber() {
                                     user &&
                                     <NavLink
                                         to="/profile"
-                                        style={({ isActive }) => {
-                                            return {
-                                                borderBottomWidth: isActive ? "4px" : "",
-                                                borderBottomColor: isActive ? "rgb(34 197 94 / 1)" : "",
-                                            }
-                                        }}
-                                        className="py-4 px-2 text-green-500 font-semibold hover:text-green-500 transition duration-300">
+                                        // style={({ isActive }) => {
+                                        //     return {
+                                        //         borderBottomWidth: isActive ? "4px" : "",
+                                        //         borderBottomColor: isActive ? "rgb(34 197 94 / 1)" : "",
+                                        //     }
+                                        // }}
+                                        className={({isActive})=>(isActive?"py-4 px-2 text-green-500 font-semibold hover:text-green-500 transition duration-300 border-b-4 border-green-500":"py-4 px-2 text-green-500 font-semibold hover:text-green-500 transition duration-300")}>
                                         Profile
                                     </NavLink>
                                 }

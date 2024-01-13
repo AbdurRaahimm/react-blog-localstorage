@@ -1,9 +1,10 @@
 import React from 'react';
 import { generateChapture } from '../utilis/generateChapture';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 
 export default function Signup() {
+    const navigate  = useNavigate();
     const signupHandler = (e) => {
         e.preventDefault();
         const { username, email, password, c_pass, chapture, cp } = e.target;
@@ -45,7 +46,8 @@ export default function Signup() {
         
         alert('Registration successful!');
         e.target.reset();
-        window.location.href = '/login';
+        // window.location.href = '/login';
+        navigate('/login');
 
     }
   return (

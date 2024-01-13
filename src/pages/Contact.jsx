@@ -1,12 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Layout from '../components/Layout'
 
 export default function Contact() {
-  useEffect(()=>{
-    // current url 
-    const url = window.location.protocol;
-    // console.log(`${window.location.protocol}//${window.location.hostname}:${window.location.port}/sucess`)
-  },[])
+
   return (
     <Layout>
       <div className="bg-gray-100 py-10 flex justify-around items-center flex-col md:flex-row space-y-3">
@@ -19,7 +15,7 @@ export default function Contact() {
                 <input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORM}/>
                 <input type="hidden" name="subject" value="Contact From Abdur Rahim"/>
                 {/* <input type="hidden" name="redirect" value="https://abdurrahim.netlify.app/"/> */}
-                <input type="hidden" name="redirect" value={`${window.location.protocol}//${window.location.hostname}/sucess`} />
+                <input type="hidden" name="redirect" value="https://react-blog-localstorage.vercel.app/sucess" />
                     <div className="w-96">
                         <div className="flex flex-col mb-2">
                             <label className="text-gray-700">Name</label>
