@@ -5,7 +5,7 @@ This is a simple project with react vite tailwind css and localstorage. This pro
 ## Usage
 1. Clone this repository
 ```bash
-git clone 
+git clone https://github.com/AbdurRaahimm/react-blog-localstorage.git
 ```
 2. Run The Essential Dependency
 ```bash
@@ -32,12 +32,26 @@ npm run serve
 - Logout
 - Delete Blog
 - Add/Edit Blog 
+- Search post
+- Edit profile
+- Responsive Design (Mobile First) 
+
 
 ## Tools
 - React
 - Vite
 - Tailwind CSS
 - ESLint
+
+## Screenshots
+![home](public/Screenshots/image.png)
+![single post](public/Screenshots/image-1.png)
+![update post](public/Screenshots/image-2.png)
+![profile](public/Screenshots/image-3.png)
+
+## Live Demo
+[Live Demo](https://react-blog-localstorage.vercel.app/)
+
 
 
 ## Connect on Social Media

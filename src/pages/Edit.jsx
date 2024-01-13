@@ -14,16 +14,11 @@ export default function Edit() {
         // only can update create by name otherwise can not update 
         if(user.username === blog.name){
             const title = e.target.title.value;
-            const description = e.target.description.value;
-            const blog = {
-                id:Date.now(),
-                name:user.username,
-                title,
-                description
-            }
+            const description = e.target.description.value; 
+            let updateBlog = {...blog, title , description};
             const blogs = JSON.parse(localStorage.getItem('blogs')) || []
             const index = blogs.findIndex(blog => blog.id == id);
-            blogs[index] = blog;
+            blogs[index] = updateBlog;
             localStorage.setItem('blogs', JSON.stringify(blogs));
             window.location.href = '/';
             

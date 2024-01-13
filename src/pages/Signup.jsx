@@ -17,6 +17,13 @@ export default function Signup() {
               alert('chapture is wrong');
               return;
         }
+        // existing email dont signup 
+        const userss = JSON.parse(localStorage.getItem('users')) || []
+        const user = userss.find(user => user.email === email.value);
+        if (user) {
+            alert('email already exist');
+            return;
+        }
          //set login false initials
         const data = {
             id: Date.now(),
@@ -73,6 +80,11 @@ export default function Signup() {
                             </div>
                             <input type="text" name='chapture' placeholder='Enter above chapture' className="placeholder:capitalize border border-gray-300 px-2 py-1 rounded" required aria-required/>
                         </div>
+                        {/* add profile pic */}
+                        {/* <div className="flex flex-col mb-2">
+                            <label className="text-gray-700">Profile Picture</label>
+                            <input type="file" name='profile' className="border border-gray-300 px-2 py-1 rounded" />
+                        </div> */}
 
                         <div className="flex flex-col mb-2">
                             <button className="bg-blue-500 text-white px-2 py-1 rounded">Sign Up</button>

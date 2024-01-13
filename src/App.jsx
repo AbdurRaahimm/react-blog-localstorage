@@ -9,6 +9,8 @@ import NotFound from "./pages/NotFound";
 import Blog from "./pages/Blog";
 import Edit from "./pages/Edit";
 import Success from "./pages/Success";
+import Profile from "./pages/Profile";
+import ProfileEdit from "./pages/ProfileEdit";
 
 function App() {
   const users = JSON.parse(localStorage.getItem('users')) || []
@@ -22,8 +24,10 @@ function App() {
       <Route path="/blogs" element={user ? <Blogs /> : <Navigate to={`/login`} />} />
       <Route path="/blog/:id" element={<Blog />} />
       <Route path="/edit/:id" element={user ? <Edit /> : <Navigate to={`/login`}/>} />
+      <Route path="/user/:id" element={user ? <ProfileEdit /> : <Navigate to={`/login`}/>} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/sucess" element={<Success />} />
+      <Route path="/profile" element={user ? <Profile /> : <Navigate to={`/login`}/>} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )
