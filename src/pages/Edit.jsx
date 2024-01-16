@@ -1,8 +1,9 @@
 import React from 'react'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Layout from '../components/Layout';
 
 export default function Edit() {
+   const navigate = useNavigate();
     const {id} = useParams();
 
     const blogs = JSON.parse(localStorage.getItem('blogs')) || []
@@ -20,7 +21,8 @@ export default function Edit() {
             const index = blogs.findIndex(blog => blog.id == id);
             blogs[index] = updateBlog;
             localStorage.setItem('blogs', JSON.stringify(blogs));
-            window.location.href = '/';
+            // window.location.href = '/';
+            navigate('/');
             
         }else{
             alert('You can not update this post');

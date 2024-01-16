@@ -1,9 +1,10 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import timeAgo from '../utilis/timeAgo';
 
 export default function Profile() {
+  const navigate = useNavigate();
   const users = JSON.parse(localStorage.getItem('users')) || []
   const user = users.find(user => user.isLogin);
   const blogs = JSON.parse(localStorage.getItem('blogs')) || []
@@ -11,7 +12,8 @@ export default function Profile() {
   const logoutHandler = () => {
     user.isLogin = false;
     localStorage.setItem('users', JSON.stringify(users));
-    window.location.href = '/';
+    // window.location.href = '/';
+    navigate('/')
   }
   return (
     <Layout>

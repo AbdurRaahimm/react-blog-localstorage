@@ -1,8 +1,9 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 export default function ProfileEdit() {
+    const navigate = useNavigate();
     const {id} = useParams(); 
     const users = JSON.parse(localStorage.getItem('users')) || []
     const user = users.find(user => user.isLogin);
@@ -25,7 +26,8 @@ export default function ProfileEdit() {
         const index = users.findIndex(user => user.id == id);
         users[index] = updatedUser;
         localStorage.setItem('users', JSON.stringify(users));
-        window.location.href = '/profile';
+        // window.location.href = '/profile';
+        navigate('/profile');
 
     };
    

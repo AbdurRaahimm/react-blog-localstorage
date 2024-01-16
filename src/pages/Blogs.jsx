@@ -1,7 +1,9 @@
 import React from 'react'
 import Layout from '../components/Layout'
+import { useNavigate } from 'react-router-dom';
 
 export default function Blog() {
+  const navigate = useNavigate()
   const users = JSON.parse(localStorage.getItem('users')) || []
   const user = users.find(user => user.isLogin);
   // console.log(user.username);
@@ -31,7 +33,8 @@ export default function Blog() {
       // set blogs to localStorage
       localStorage.setItem('blogs', JSON.stringify(blogs));
       // redirect to home page
-      window.location.href = '/';
+      // window.location.href = '/';
+      navigate('/')
     }
 
 
