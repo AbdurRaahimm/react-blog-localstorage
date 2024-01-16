@@ -8,19 +8,33 @@ export default function Blog() {
   const username = user.username;
   const handleBlog = (e) => {
     e.preventDefault();
+    // take title, description, and image Data URL from form
     const title = e.target.title.value;
     const description = e.target.description.value;
-    const blog = {
-      id: Date.now(),
-      name:username,
-      title,
-      description
+    const image = e.target.image.files[0];
+    // make data url from image 
+    const reader = new FileReader();
+    reader.readAsDataURL(image);
+    reader.onload = () => {
+      const blog = {
+        id: Date.now(),
+        name: username,
+        profile:user.profile,
+        title,
+        description,
+        image: reader.result,
+      }
+      // get blogs from localStorage
+      const blogs = JSON.parse(localStorage.getItem('blogs')) || [];
+      // push blog to blogs
+      blogs.push(blog);
+      // set blogs to localStorage
+      localStorage.setItem('blogs', JSON.stringify(blogs));
+      // redirect to home page
+      window.location.href = '/';
     }
-    const blogs = JSON.parse(localStorage.getItem('blogs')) || []
-    blogs.push(blog);
-    localStorage.setItem('blogs', JSON.stringify(blogs));
-    e.target.reset();
-    window.location.href = '/';
+
+
   }
   return (
     <Layout>
@@ -39,6 +53,11 @@ export default function Blog() {
                 <div className="flex flex-col mb-2">
                   <label className="text-gray-700">Description</label>
                   <textarea name="description" className="border border-gray-300 px-2 py-1 rounded focus:outline-green-500" required aria-required></textarea>
+                </div>
+                {/* blog image */}
+                <div className="flex flex-col mb-2">
+                  <label className="text-gray-700">Image</label>
+                  <input type="file" name='image' className="border border-gray-300 px-2 py-1 rounded focus:outline-green-500" required aria-required />
                 </div>
                 <div className="flex flex-col mb-2">
                   <button className="bg-green-500 text-white px-2 py-1 rounded capitalize">Create post</button>

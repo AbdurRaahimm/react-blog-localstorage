@@ -36,6 +36,9 @@ npm run serve
 - Edit profile
 - Responsive Design (Mobile First) 
 
+## New Features Add
+- Image add in Blogs
+- Image add in Profile
 
 ## Tools
 - React
@@ -48,6 +51,7 @@ npm run serve
 ![single post](public/Screenshots/image-1.png)
 ![update post](public/Screenshots/image-2.png)
 ![profile](public/Screenshots/image-3.png)
+![profile](public/Screenshots/image-4.png)
 
 ## Live Demo
 [Live Demo](https://react-blog-localstorage.vercel.app/)
